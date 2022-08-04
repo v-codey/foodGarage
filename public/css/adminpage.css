@@ -1,0 +1,45 @@
+.restaurentDetails {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid;
+    background: rgba(195, 195, 195, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border-radius: 10px;
+}
+
+.title {
+    text-align: center;
+    color: rgb(251, 251, 251);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    z-index: 2;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+main[name="adminPage"] {
+    height: calc(120vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url("https://images.unsplash.com/photo-1488992783499-418eb1f62d08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1289&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.addBlur{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+}
