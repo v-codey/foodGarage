@@ -1,8 +1,9 @@
-#FoodGarage (Online food ordering destination)
+# FoodGarage (Online food ordering destination)
 
-##how to use this 
+## how to use this 
 
-- download files
+- download files and then open command prompt and go to destination where public folder exists
 
-npm install
+`npm install`
+
 
