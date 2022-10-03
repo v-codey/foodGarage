@@ -11,7 +11,7 @@ var getRestaurentTemplate = () => {
         method: 'GET',
         success: (responseTemplate) => {
             singleRestaurentTemplate = responseTemplate;
-            console.log(responseTemplate);
+            // console.log(responseTemplate);
             singleRestaurentTemplate = Handlebars.compile(singleRestaurentTemplate);
         }
 
@@ -114,8 +114,6 @@ $(document).ready(() => {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log("data");
-            console.log(data);
             if (data.isUserLoggedin) {
                 loadSelectedTemplate('expRestrnt');
             } else {
@@ -144,7 +142,7 @@ var validateCustomer = () => {
     var userInfo = {};
     userInfo.userAccountId = $("#userAccountId").val();
     userInfo.accountPwd = $("#userPassword").val();
-    console.log(userInfo);
+    // console.log(userInfo);
 
 
     $.ajax({
@@ -153,10 +151,12 @@ var validateCustomer = () => {
         dataType: 'JSON',
         data: userInfo,
         success: (response) => {
+            console.log(response);
             if (response.status == 'Success') {
                 // valid user
                 loadSelectedTemplate('expRestrnt');
             } else {
+                console.log("wrong cred error")
                 $("#loginError").show(100);
             }
         }

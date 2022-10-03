@@ -17,10 +17,12 @@ router.post('/', (request, response) => {
         collection.find({
             userAccountId: request.body.userAccountId
         }).toArray((error, details) => {
+            console.log("validate user details");
+            console.log(error);
+            console.log(details);
             if (error) {
                 data.msg = 'Error while conncting to collection';
             } else {
-                console.log(details);
                 bcrypt.compare(request.body.accountPwd, details[0].accountPwd, function(err, result) {
                     if (result) { // true
                         request.session.isUserLoggedin = true;
@@ -28,9 +30,10 @@ router.post('/', (request, response) => {
                         data.status = 'Success';
                     } else {
                         request.session.isUserLoggedin = false;
-                        data.msg = 'Invalid Credentials'
+                        data.msg = 'Invalid Credentials';
                         data.status = 'Error';
                     }
+                    console.log(data);
                     response.send(JSON.stringify(data));
                 });                
             }

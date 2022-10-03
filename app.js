@@ -35,11 +35,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-console.log(__dirname)
-
-
-
-console.log(path.join(__dirname, 'public'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -57,8 +52,10 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-server.listen(8081, () => {
-  console.log("Server is listing at 8081");
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log("Server is listing at "+PORT);
 })
 
 io.on('connection', (socket) => {
